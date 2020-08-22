@@ -106,6 +106,10 @@ class EmployeeDAO(context: Context) : DbDao(context) {
                 cursor.getString(cursor.getColumnIndex(EmployeeContract.Entry.PROFILE_IMAGE))
             employeeList?.add(employeeItem)
         }
+        for (i in 0..employeeList?.size!!.minus(1)) {
+            val company = getCompanyDetails(employeeList[i]?.id)
+            employeeList[i]?.company = company
+        }
         return employeeList
     }
 
@@ -139,7 +143,6 @@ class EmployeeDAO(context: Context) : DbDao(context) {
         }
         return address
     }
-
 
 
     /** DB read function. Its used for get company details. */
