@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.item_employee.view.*
  *
  * @param items is employee list.
  */
-class EmployeeListAdapter(var items: List<EmployeeModel?>) :
+class EmployeeListAdapter(var items: ArrayList<EmployeeModel?>) :
     RecyclerView.Adapter<EmployeeListAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,6 +54,16 @@ class EmployeeListAdapter(var items: List<EmployeeModel?>) :
         /** Calling ViewHolder class bind function and passing single item from list
          */
         holder.bind(this.items.get(holder.adapterPosition))
+    }
+
+    fun getList(): ArrayList<EmployeeModel?> {
+        return items
+    }
+
+    fun setFilter(contentList: ArrayList<EmployeeModel>) {
+        this.items = java.util.ArrayList()
+        this.items.addAll(contentList!!)
+        notifyDataSetChanged()
     }
 
 }
