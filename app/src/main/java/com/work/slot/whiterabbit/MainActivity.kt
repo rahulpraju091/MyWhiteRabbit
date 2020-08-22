@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: EmployeeViewModel
     private lateinit var searchView: SearchView
     lateinit var adapter: EmployeeListAdapter
-    private lateinit var mLayoutManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

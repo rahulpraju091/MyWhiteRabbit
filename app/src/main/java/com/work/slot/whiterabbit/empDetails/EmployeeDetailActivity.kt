@@ -33,7 +33,7 @@ class EmployeeDetailActivity : AppCompatActivity() {
         }
         val employeeDAO = EmployeeDAO(this@EmployeeDetailActivity)
         val detailsRepository = DetailsRepository(employeeDAO)
-        val detailsVMFactory = DetailsVMFactory(detailsRepository, employeeDAO)
+        val detailsVMFactory = DetailsVMFactory(detailsRepository)
         detailsVMFactory.let {
             viewModel = ViewModelProvider(this, it).get(DetailsViewModel::class.java)
         }

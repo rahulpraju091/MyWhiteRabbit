@@ -11,7 +11,6 @@ import com.work.slot.whiterabbit.model.EmployeeModel
 
 class DetailsViewModel(
     private var detailsRepository: DetailsRepository,
-    private var employeeDAO: EmployeeDAO
 ) : ViewModel() {
 
     companion object {

@@ -10,12 +10,11 @@ import com.work.slot.whiterabbit.viewModel.EmployeeViewModel
  * ViewModel Factory class.
  *
  * Using this factory class we achieve dependency injection
- * @param employeeRepository is the Repository class object.
+ * @param detailsRepository is the Repository class object.
  */
 @Suppress("UNCHECKED_CAST")
 class DetailsVMFactory(
     private val detailsRepository: DetailsRepository,
-    private val employeeDAO: EmployeeDAO
 ) :
     ViewModelProvider.NewInstanceFactory() {
 
@@ -23,6 +22,6 @@ class DetailsVMFactory(
      * @return DetailsViewModel instance.
      */
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return DetailsViewModel(detailsRepository, employeeDAO) as T
+        return DetailsViewModel(detailsRepository) as T
     }
 }

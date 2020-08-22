@@ -5,7 +5,7 @@ import android.provider.BaseColumns
 /**
  * Contract class.
  *
- * This class handles all fields of the city table, and table name.
+ * This class handles all fields of the employee table, and table name.
  *
  * @param EMPLOYEE_TABLE is the table name.
  * @param ID is the primary key of the table.
