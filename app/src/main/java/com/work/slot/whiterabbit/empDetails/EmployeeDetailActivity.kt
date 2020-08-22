@@ -2,7 +2,6 @@ package com.work.slot.whiterabbit.empDetails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +13,6 @@ import com.work.slot.whiterabbit.model.AddressModel
 import com.work.slot.whiterabbit.model.CompanyModel
 import com.work.slot.whiterabbit.model.EmployeeModel
 import kotlinx.android.synthetic.main.activity_employee_detail.*
-import kotlinx.android.synthetic.main.item_employee.view.*
 
 class EmployeeDetailActivity : AppCompatActivity() {
 
@@ -35,8 +33,8 @@ class EmployeeDetailActivity : AppCompatActivity() {
         }
         val employeeDAO = EmployeeDAO(this@EmployeeDetailActivity)
         val detailsRepository = DetailsRepository(employeeDAO)
-        val featureListVMFactory = DetailsVMFactory(detailsRepository, employeeDAO)
-        featureListVMFactory.let {
+        val detailsVMFactory = DetailsVMFactory(detailsRepository, employeeDAO)
+        detailsVMFactory.let {
             viewModel = ViewModelProvider(this, it).get(DetailsViewModel::class.java)
         }
 

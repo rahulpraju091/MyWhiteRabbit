@@ -18,7 +18,7 @@ class EmployeeVMFactory(
     ViewModelProvider.NewInstanceFactory() {
 
     /** Override function.
-     * @return FeatureListViewModel instance.
+     * @return EmployeeViewModel instance.
      */
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return EmployeeViewModel(employeeRepository,employeeDAO) as T

@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         val employeeDAO = EmployeeDAO(this@MainActivity)
         val api = AppInterfaceAPI()
-        val featureListRepository = EmployeeRepository(api, employeeDAO)
-        val featureListVMFactory = EmployeeVMFactory(featureListRepository, employeeDAO)
-        featureListVMFactory.let {
+        val employeeRepository = EmployeeRepository(api, employeeDAO)
+        val employeeVMFactory = EmployeeVMFactory(employeeRepository, employeeDAO)
+        employeeVMFactory.let {
             viewModel = ViewModelProvider(this, it).get(EmployeeViewModel::class.java)
         }
 
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     progress_view.visibility = View.GONE
                 }
 
-                /** Callback function of null response failure. Calls when features list is empty or null */
+                /** Callback function of null response failure. Calls when employee list is empty or null */
                 override fun onResponseFailure() {
                     Toast.makeText(this@MainActivity, MSG_RESPONSE_FAILURE, Toast.LENGTH_SHORT)
                         .show()

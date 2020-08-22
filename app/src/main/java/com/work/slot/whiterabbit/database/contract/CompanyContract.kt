@@ -5,7 +5,7 @@ import android.provider.BaseColumns
 /**
  * Contract class.
  *
- * This class handles all fields of the feature table, and table name.
+ * This class handles all fields of the company table, and table name.
  *
  * @param COMPANY_TABLE is the table name.
  * @param EMPLOYEE_ID is the foreign key of the table.

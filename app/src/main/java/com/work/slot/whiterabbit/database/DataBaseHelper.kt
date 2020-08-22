@@ -15,8 +15,6 @@ import com.work.experion.database.contract.CompanyContract
  *
  * @param DATABASE_NAME is the name of the database.
  * @param DATABASE_VERSION is the version number of the database
- * @param CREATE_CITY_TABLE is the variable used for create city table
- * @param CREATE_FEATURE_TABLE is the variable used for create Feature table
  */
 class DataBaseHelper(private var context: Context) : SQLiteOpenHelper(
     context, DATABASE_NAME, null,

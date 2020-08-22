@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.item_employee.view.*
  *
  * This class handles recyclerview item design and data.
  *
- * @param items is feature list.
+ * @param items is employee list.
  */
 class EmployeeListAdapter(var items: List<EmployeeModel?>) :
     RecyclerView.Adapter<EmployeeListAdapter.ViewHolder>() {
@@ -26,8 +26,7 @@ class EmployeeListAdapter(var items: List<EmployeeModel?>) :
         fun bind(item: EmployeeModel?) {
             item.let {
                 itemView.txt_name.text = it?.name
-                itemView.txt_user_name.text = it?.username
-                itemView.txt_email.text = it?.email
+                itemView.txt_user_name.text = it?.company?.name
                 Glide.with(itemView.context).load(it?.profileImage)
                     .thumbnail(0.5f)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)

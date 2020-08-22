@@ -20,7 +20,7 @@ class DetailsVMFactory(
     ViewModelProvider.NewInstanceFactory() {
 
     /** Override function.
-     * @return FeatureListViewModel instance.
+     * @return DetailsViewModel instance.
      */
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return DetailsViewModel(detailsRepository, employeeDAO) as T
